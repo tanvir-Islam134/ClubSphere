@@ -11,7 +11,7 @@ class RoleSelectionScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       body: SafeArea(
-        child: Padding(
+        child: SingleChildScrollView(
           padding: const EdgeInsets.all(24.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -20,8 +20,8 @@ class RoleSelectionScreen extends ConsumerWidget {
                 child: Column(
                   children: [
                     Container(
-                      width: 84,
-                      height: 84,
+                      width: 80,
+                      height: 80,
                       padding: const EdgeInsets.all(8),
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -60,7 +60,7 @@ class RoleSelectionScreen extends ConsumerWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: 32),
+              const SizedBox(height: 24),
               Text(
                 'Select Your Role',
                 style: Theme.of(context).textTheme.displayLarge,
@@ -72,7 +72,7 @@ class RoleSelectionScreen extends ConsumerWidget {
                       color: AppColors.textSecondary,
                     ),
               ),
-              const SizedBox(height: 48),
+              const SizedBox(height: 24),
               _buildRoleCard(
                 context,
                 title: 'Student',
@@ -83,7 +83,7 @@ class RoleSelectionScreen extends ConsumerWidget {
                   context.push('/student_login');
                 },
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 14),
               _buildRoleCard(
                 context,
                 title: 'Club Admin',
@@ -94,7 +94,7 @@ class RoleSelectionScreen extends ConsumerWidget {
                   context.push('/admin_login');
                 },
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 14),
               _buildRoleCard(
                 context,
                 title: 'HR Office',
@@ -105,6 +105,7 @@ class RoleSelectionScreen extends ConsumerWidget {
                   context.push('/hr_login');
                 },
               ),
+              const SizedBox(height: 16),
             ],
           ),
         ),
@@ -123,7 +124,7 @@ class RoleSelectionScreen extends ConsumerWidget {
       onTap: onTap,
       borderRadius: BorderRadius.circular(16),
       child: Container(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
         decoration: BoxDecoration(
           border: Border.all(color: AppColors.border),
           borderRadius: BorderRadius.circular(16),
@@ -143,6 +144,7 @@ class RoleSelectionScreen extends ConsumerWidget {
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(title, style: Theme.of(context).textTheme.displaySmall),
                   const SizedBox(height: 4),
