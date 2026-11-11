@@ -16,14 +16,59 @@ class RoleSelectionScreen extends ConsumerWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 40),
+              const SizedBox(height: 16),
+              Row(
+                children: [
+                  Container(
+                    width: 52,
+                    height: 52,
+                    padding: const EdgeInsets.all(4),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
+                      border: Border.all(color: AppColors.border),
+                      boxShadow: [
+                        BoxShadow(
+                          color: AppColors.primary.withValues(alpha: 0.08),
+                          blurRadius: 8,
+                          offset: const Offset(0, 2),
+                        ),
+                      ],
+                    ),
+                    child: Image.asset('assets/images/baust_logo.png',
+                        fit: BoxFit.contain),
+                  ),
+                  const SizedBox(width: 12),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'BAUST',
+                        style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                              letterSpacing: 1.5,
+                              color: AppColors.primary,
+                              fontWeight: FontWeight.bold,
+                            ),
+                      ),
+                      Text(
+                        'ClubSphere',
+                        style:
+                            Theme.of(context).textTheme.displaySmall?.copyWith(
+                                  color: AppColors.textPrimary,
+                                ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              const SizedBox(height: 28),
               Text(
-                'Welcome to ClubSphere',
+                'Select Your Role',
                 style: Theme.of(context).textTheme.displayLarge,
               ),
               const SizedBox(height: 8),
               Text(
-                'Select your role to continue',
+                'Select your role to access your personalized portal',
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                       color: AppColors.textSecondary,
                     ),

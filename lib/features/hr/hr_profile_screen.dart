@@ -47,7 +47,7 @@ class HrProfileScreen extends ConsumerWidget {
                       style: TextStyle(
                           color: AppColors.error, fontWeight: FontWeight.bold)),
                   onTap: () {
-                    ref.read(roleProvider.notifier).state = AppRole.none;
+                    ref.read(roleProvider.notifier).setRole(AppRole.none);
                     context.go('/hr_login');
                   },
                 ),

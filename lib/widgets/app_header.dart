@@ -7,6 +7,7 @@ class AppHeader extends StatelessWidget {
   final String? subtitle;
   final bool showBack;
   final Widget? trailing;
+  final bool showLogo;
 
   const AppHeader({
     super.key,
@@ -14,6 +15,7 @@ class AppHeader extends StatelessWidget {
     this.subtitle,
     this.showBack = true,
     this.trailing,
+    this.showLogo = true,
   });
 
   @override
@@ -45,7 +47,25 @@ class AppHeader extends StatelessWidget {
                 )
               else
                 const SizedBox(width: 48),
-              if (trailing != null) trailing! else const SizedBox(width: 48),
+              if (trailing != null)
+                trailing!
+              else if (showLogo)
+                Container(
+                  width: 38,
+                  height: 38,
+                  margin: const EdgeInsets.only(right: 8),
+                  padding: const EdgeInsets.all(4),
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                  ),
+                  child: Image.asset(
+                    'assets/images/baust_logo.png',
+                    fit: BoxFit.contain,
+                  ),
+                )
+              else
+                const SizedBox(width: 48),
             ],
           ),
           const SizedBox(height: 8),

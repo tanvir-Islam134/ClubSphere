@@ -79,26 +79,35 @@ class HrClubInformationScreen extends ConsumerWidget {
                               title: 'Events',
                               value: activities.length.toString())),
                       const SizedBox(width: 12),
-                      const Expanded(
+                      Expanded(
                           child: StatCard(
                               icon: Icons.admin_panel_settings,
                               title: 'Admins',
-                              value: '1')),
+                              value: admins.length.toString())),
                     ],
                   ),
                   const SizedBox(height: 32),
                   Text('Approved Admins',
                       style: Theme.of(context).textTheme.displayMedium),
                   const SizedBox(height: 16),
-                  const Card(
-                    child: ListTile(
-                      leading: CircleAvatar(child: Icon(Icons.person)),
-                      title: Text('Alice Smith'), // Mock admin
-                      subtitle: Text('President • alice.smith@baust.edu.bd'),
-                      trailing:
-                          Icon(Icons.check_circle, color: AppColors.success),
-                    ),
-                  ),
+                  if (admins.isEmpty)
+                    const Card(
+                      child: Padding(
+                        padding: EdgeInsets.all(16.0),
+                        child: Text('No approved admins for this club.'),
+                      ),
+                    )
+                  else
+                    ...admins.map((admin) => Card(
+                          margin: const EdgeInsets.only(bottom: 8),
+                          child: ListTile(
+                            leading: const CircleAvatar(child: Icon(Icons.person)),
+                            title: Text(admin.name),
+                            subtitle: Text('${admin.role} • ${admin.email}'),
+                            trailing: const Icon(Icons.check_circle,
+                                color: AppColors.success),
+                          ),
+                        )),
                   const SizedBox(height: 32),
                   Text('Budget Overview',
                       style: Theme.of(context).textTheme.displayMedium),

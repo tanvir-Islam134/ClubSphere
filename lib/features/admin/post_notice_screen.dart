@@ -79,10 +79,10 @@ class _PostNoticeScreenState extends ConsumerState<PostNoticeScreen> {
                         sendTo: _sendTo,
                         postedDate: DateTime.now(),
                       );
-                      ref.read(noticesProvider.notifier).state = [
+                      ref.read(noticesProvider.notifier).updateNotices([
                         ...ref.read(noticesProvider),
                         notice
-                      ];
+                      ]);
                       context.pop();
                     },
                   ),

@@ -48,9 +48,18 @@ class HrDashboard extends ConsumerWidget {
                               ?.copyWith(color: Colors.white)),
                     ],
                   ),
-                  const CircleAvatar(
-                    backgroundColor: AppColors.primaryLight,
-                    child: Icon(Icons.business, color: AppColors.primary),
+                  Container(
+                    width: 44,
+                    height: 44,
+                    padding: const EdgeInsets.all(4),
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
+                    ),
+                    child: Image.asset(
+                      'assets/images/baust_logo.png',
+                      fit: BoxFit.contain,
+                    ),
                   ),
                 ],
               ),
@@ -69,11 +78,11 @@ class HrDashboard extends ConsumerWidget {
                                 title: 'Clubs',
                                 value: clubs.length.toString())),
                         const SizedBox(width: 16),
-                        const Expanded(
+                        Expanded(
                             child: StatCard(
                                 icon: Icons.admin_panel_settings,
                                 title: 'Admins',
-                                value: '5')), // Mock
+                                value: approvedAdmins.length.toString())),
                       ],
                     ),
                     const SizedBox(height: 16),

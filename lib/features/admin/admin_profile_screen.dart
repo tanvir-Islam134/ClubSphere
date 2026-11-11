@@ -50,8 +50,8 @@ class AdminProfileScreen extends ConsumerWidget {
                       style: TextStyle(
                           color: AppColors.error, fontWeight: FontWeight.bold)),
                   onTap: () {
-                    ref.read(roleProvider.notifier).state = AppRole.none;
-                    ref.read(currentAdminClubIdProvider.notifier).state = null;
+                    ref.read(roleProvider.notifier).setRole(AppRole.none);
+                    ref.read(currentAdminClubIdProvider.notifier).setId(null);
                     context.go('/admin_login');
                   },
                 ),

@@ -90,7 +90,7 @@ class _ClubProfileEditScreenState extends ConsumerState<ClubProfileEditScreen> {
                     text: 'Save Changes',
                     onPressed: () {
                       final clubs = ref.read(clubsProvider);
-                      ref.read(clubsProvider.notifier).state = clubs.map((c) {
+                      final updatedClubs = clubs.map((c) {
                         if (c.id == widget.clubId) {
                           return c.copyWith(
                             name: _nameController.text,
@@ -100,6 +100,7 @@ class _ClubProfileEditScreenState extends ConsumerState<ClubProfileEditScreen> {
                         }
                         return c;
                       }).toList();
+                      ref.read(clubsProvider.notifier).updateClubs(updatedClubs);
                       context.pop();
                     },
                   ),

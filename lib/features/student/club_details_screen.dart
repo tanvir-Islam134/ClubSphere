@@ -29,8 +29,21 @@ class ClubDetailsScreen extends ConsumerWidget {
               background: Container(
                 color: AppColors.primary,
                 child: Center(
-                  child: Icon(Icons.group,
-                      size: 80, color: Colors.white.withValues(alpha: 0.5)),
+                  child: Container(
+                    width: 90,
+                    height: 90,
+                    padding: const EdgeInsets.all(8),
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
+                    ),
+                    child: Image.asset(
+                      club.logoUrl.isNotEmpty
+                          ? club.logoUrl
+                          : 'assets/images/baust_logo.png',
+                      fit: BoxFit.contain,
+                    ),
+                  ),
                 ),
               ),
             ),

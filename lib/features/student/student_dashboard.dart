@@ -137,9 +137,27 @@ class StudentDashboard extends ConsumerWidget {
               ),
             ],
           ),
-          IconButton(
-            icon: const Icon(Icons.notifications_none, color: Colors.white),
-            onPressed: () {},
+          Row(
+            children: [
+              IconButton(
+                icon: const Icon(Icons.notifications_none, color: Colors.white),
+                onPressed: () {},
+              ),
+              const SizedBox(width: 4),
+              Container(
+                width: 38,
+                height: 38,
+                padding: const EdgeInsets.all(4),
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.circle,
+                ),
+                child: Image.asset(
+                  'assets/images/baust_logo.png',
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ],
           ),
         ],
       ),

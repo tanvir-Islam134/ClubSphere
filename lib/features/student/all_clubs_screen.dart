@@ -94,9 +94,22 @@ class _AllClubsScreenState extends ConsumerState<AllClubsScreen> {
                         Row(
                           children: [
                             CircleAvatar(
-                                radius: 24,
-                                backgroundColor: AppColors.primaryLight,
-                                child: Text(club.name[0])),
+                              radius: 24,
+                              backgroundColor: Colors.white,
+                              child: club.logoUrl.isNotEmpty
+                                  ? Padding(
+                                      padding: const EdgeInsets.all(4),
+                                      child: Image.asset(club.logoUrl,
+                                          fit: BoxFit.contain),
+                                    )
+                                  : Text(
+                                      club.name[0],
+                                      style: const TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: AppColors.primary,
+                                      ),
+                                    ),
+                            ),
                             const SizedBox(width: 12),
                             Expanded(
                               child: Column(

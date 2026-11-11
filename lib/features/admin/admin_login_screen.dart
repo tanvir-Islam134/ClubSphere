@@ -29,7 +29,7 @@ class _AdminLoginScreenState extends ConsumerState<AdminLoginScreen> {
       return;
     }
     // Mock setting the current club id context
-    ref.read(currentAdminClubIdProvider.notifier).state = _selectedClub!.id;
+    ref.read(currentAdminClubIdProvider.notifier).setId(_selectedClub!.id);
     context.go('/admin/${_selectedClub!.id}/dashboard');
   }
 

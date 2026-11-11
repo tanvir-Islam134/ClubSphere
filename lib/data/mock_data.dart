@@ -9,7 +9,7 @@ class MockData {
       description:
           'The official computer club of BAUST. We organize programming contests, tech talks, and workshops.',
       contactEmail: 'bcc@baust.edu.bd',
-      logoUrl: 'assets/images/bcc_logo.png',
+      logoUrl: 'assets/images/baust_logo.png',
       coverUrl: 'assets/images/bcc_cover.png',
     ),
     Club(
@@ -19,6 +19,7 @@ class MockData {
       description:
           'Building the future with robotics. Join us to learn about electronics, microcontrollers, and automation.',
       contactEmail: 'brc@baust.edu.bd',
+      logoUrl: 'assets/images/baust_logo.png',
     ),
     Club(
       id: 'c3',
@@ -27,6 +28,7 @@ class MockData {
       description:
           'Celebrating diversity and culture through music, dance, and drama.',
       contactEmail: 'cultural@baust.edu.bd',
+      logoUrl: 'assets/images/baust_logo.png',
     ),
     Club(
       id: 'c4',
@@ -35,6 +37,7 @@ class MockData {
       description:
           'Promoting physical fitness and sportsmanship among students.',
       contactEmail: 'sports@baust.edu.bd',
+      logoUrl: 'assets/images/baust_logo.png',
     ),
     Club(
       id: 'c5',
@@ -43,6 +46,7 @@ class MockData {
       description:
           'Helping students prepare for their future careers with workshops, seminars, and networking events.',
       contactEmail: 'careers@baust.edu.bd',
+      logoUrl: 'assets/images/baust_logo.png',
     ),
   ];
 
