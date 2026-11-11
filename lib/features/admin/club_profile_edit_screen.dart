@@ -33,6 +33,9 @@ class _ClubProfileEditScreenState extends ConsumerState<ClubProfileEditScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final club =
+        ref.watch(clubsProvider).firstWhere((c) => c.id == widget.clubId);
+
     return Scaffold(
       body: Column(
         children: [
@@ -46,11 +49,17 @@ class _ClubProfileEditScreenState extends ConsumerState<ClubProfileEditScreen> {
                   Center(
                     child: Stack(
                       children: [
-                        const CircleAvatar(
+                        CircleAvatar(
                           radius: 50,
-                          backgroundColor: AppColors.primaryLight,
-                          child: Icon(Icons.image,
-                              size: 40, color: AppColors.primary),
+                          backgroundColor: Colors.white,
+                          child: club.logoUrl.isNotEmpty
+                              ? Padding(
+                                  padding: const EdgeInsets.all(8),
+                                  child: Image.asset(club.logoUrl,
+                                      fit: BoxFit.contain),
+                                )
+                              : const Icon(Icons.image,
+                                  size: 40, color: AppColors.primary),
                         ),
                         Positioned(
                           bottom: 0,

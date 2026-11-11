@@ -33,10 +33,20 @@ class HrClubInformationScreen extends ConsumerWidget {
                   Row(
                     children: [
                       CircleAvatar(
-                          radius: 32,
-                          backgroundColor: AppColors.primaryLight,
-                          child: Text(club.name[0],
-                              style: const TextStyle(fontSize: 24))),
+                        radius: 32,
+                        backgroundColor: Colors.white,
+                        child: club.logoUrl.isNotEmpty
+                            ? Padding(
+                                padding: const EdgeInsets.all(4),
+                                child: Image.asset(club.logoUrl,
+                                    fit: BoxFit.contain),
+                              )
+                            : Text(club.name[0],
+                                style: const TextStyle(
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.bold,
+                                    color: AppColors.primary)),
+                      ),
                       const SizedBox(width: 16),
                       Expanded(
                         child: Column(

@@ -48,8 +48,20 @@ class StudentDashboard extends ConsumerWidget {
                           margin: const EdgeInsets.only(bottom: 12),
                           child: ListTile(
                             leading: CircleAvatar(
-                                backgroundColor: AppColors.primaryLight,
-                                child: Text(club.name[0])),
+                                backgroundColor: Colors.white,
+                                child: club.logoUrl.isNotEmpty
+                                    ? Padding(
+                                        padding: const EdgeInsets.all(4),
+                                        child: Image.asset(club.logoUrl,
+                                            fit: BoxFit.contain),
+                                      )
+                                    : Text(
+                                        club.name[0],
+                                        style: const TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: AppColors.primary,
+                                        ),
+                                      )),
                             title: Text(club.name,
                                 style: const TextStyle(
                                     fontWeight: FontWeight.w600)),
@@ -81,8 +93,20 @@ class StudentDashboard extends ConsumerWidget {
                           margin: const EdgeInsets.only(bottom: 12),
                           child: ListTile(
                             leading: CircleAvatar(
-                                backgroundColor: AppColors.primaryLight,
-                                child: Text(club.name[0])),
+                                backgroundColor: Colors.white,
+                                child: club.logoUrl.isNotEmpty
+                                    ? Padding(
+                                        padding: const EdgeInsets.all(4),
+                                        child: Image.asset(club.logoUrl,
+                                            fit: BoxFit.contain),
+                                      )
+                                    : Text(
+                                        club.name[0],
+                                        style: const TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: AppColors.primary,
+                                        ),
+                                      )),
                             title: Text(club.name,
                                 style: const TextStyle(
                                     fontWeight: FontWeight.w600)),
